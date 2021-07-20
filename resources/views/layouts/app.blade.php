@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no user-scalable=no">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <!-- css -->
     <link href="{{ asset('/css/app.css') }}" rel="stylesheet">
     <link href="{{ asset('/css/style.css') }}" rel="stylesheet">
     <!-- googleフォント用 -->
