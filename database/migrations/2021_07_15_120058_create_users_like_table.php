@@ -13,16 +13,16 @@ class CreateUsersLikeTable extends Migration
      */
     public function up()
     {
-        Schema::create('users_like', function (Blueprint $table) {
+        Schema::create('reviews_favorite', function (Blueprint $table) {
             //カラムを追加
+            $table->bigIncrements('id');
             $table->unsignedBigInteger('user_id');
             $table->unsignedBigInteger('review_id');
-            //複合主キーを定義
-            $table->primary(['user_id', 'review_id']);
-
             //外部キー制約
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
             $table->foreign('review_id')->references('id')->on('reviews')->onDelete('cascade');
+
+            $table->timestamps();
         });
     }
 
@@ -33,6 +33,6 @@ class CreateUsersLikeTable extends Migration
      */
     public function down()
     {
-
+        Schema::dropIfExists('reviews_favorite');
     }
 }
