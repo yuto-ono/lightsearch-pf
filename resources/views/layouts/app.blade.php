@@ -12,7 +12,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Righteous&display=swap" rel="stylesheet">
     <title>
-        @yield('title') | {{ config('app.name', 'LightSearch') }}
+        @yield('title')
     </title>
 </head>
 
