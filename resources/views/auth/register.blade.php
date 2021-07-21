@@ -10,7 +10,7 @@
         <div class="col-md-8">
             <div class="card">
                 <div class="card-header">
-                    <h3 class="text-center my-2">会員情報登録</h3>
+                    <h3 class="text-center my-2">ユーザー登録</h3>
                 </div>
                 <div class="card-body">
                     <form method="POST" action="{{ route('register') }}" class="p-3">
