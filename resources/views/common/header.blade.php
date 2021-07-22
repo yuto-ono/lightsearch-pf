@@ -21,10 +21,10 @@
                 @else
                 <!-- 非ログイン -->
                 <li class="nav-item">
-                    <a class="nav-link active" href="{{ route('register') }}">会員登録</a>
+                    <a class="nav-link active" href="{{ route('login') }}">ログイン</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link active" href="{{ route('login') }}">ログイン</a>
+                    <a class="nav-link active" href="{{ route('register') }}">会員登録</a>
                 </li>
                 @endif
             </ul>
