@@ -1,8 +1,7 @@
 @extends('layouts.app')
 
 @section('title')
-    パスワードリセット
-@endsection
+    パスワードリセットリクエスト
 
 @section('content')
 <div class="container">
