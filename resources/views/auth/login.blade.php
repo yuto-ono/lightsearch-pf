@@ -49,7 +49,7 @@
                             アカウントをお持ちでない方は<a href="{{ route('register') }}">こちら</a>
                         </div>
                         <div class="mt-1">
-                            パスワードをお忘れの方は<a href="">こちら</a>
+                            パスワードをお忘れの方は<a href="{{ route('password.request') }}">こちら</a>
                         </div>
                     </form>
                 </div>

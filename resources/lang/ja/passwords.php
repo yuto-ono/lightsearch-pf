@@ -12,9 +12,10 @@ return [
     | has failed, such as for an invalid token or invalid new password.
     |
     */
-    
+
     'password' => 'パスワードは6文字以上にして、確認用入力欄と一致させてください。',
     'reset' => 'パスワードは再設定されました！',
+    'throttled' => '時間を置いて再度お試し下さい',
     'sent' => 'パスワード再設定用のURLをメールで送りました。',
     'token' => 'パスワード再設定用のトークンが不正です。',
     'user' => "メールアドレスに一致するユーザーが存在しません。",
