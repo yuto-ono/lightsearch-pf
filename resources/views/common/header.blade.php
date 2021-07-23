@@ -6,7 +6,7 @@
                 @if (Auth::check())
                 <!-- ログイン済み -->
                 <li class="nav-item">
-                    <a class="nav-link active" href="">マイページ</a>
+                    <a class="nav-link active" href="{{ route('user.mypage') }}">マイページ</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link active" href="">レビュー投稿</a>

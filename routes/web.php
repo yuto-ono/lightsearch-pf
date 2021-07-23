@@ -17,4 +17,11 @@ Route::get('/', function () {
 
 Auth::routes();
 
+Route::group(['middleware' => ['auth']], function () {
+    //マイページ表示
+    Route::get('/users', 'UsersController@showUsersForm')->name('user.mypage');
+
+});
+
+
 Route::get('/home', 'HomeController@index')->name('home');
