@@ -2,6 +2,7 @@
 
 @section('title')
     パスワードリセットリクエスト
+@endsection
 
 @section('content')
 <div class="container">
