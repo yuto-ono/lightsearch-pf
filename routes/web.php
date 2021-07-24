@@ -18,8 +18,10 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::group(['middleware' => ['auth']], function () {
-    //マイページ表示
+    //マイページ画面表示
     Route::get('/users', 'UsersController@showUsersForm')->name('user.mypage');
+    //ユーザー情報変更画面表示
+    Route::get('users/{id}/edit', 'UsersController@editUsersForm')->name('user.edit');
 
 });
 
