@@ -8,7 +8,7 @@ use Illuminate\Support\Facades\Auth;
 class UsersController extends Controller
 {
     /**
-     * マイページ
+     * マイページ画面表示
      *
      * @return void
      */
@@ -17,5 +17,17 @@ class UsersController extends Controller
         //ユーザー情報取得
         $auth = Auth::user();
         return view('user.mypage', ['auth' => $auth]);
+    }
+
+    /**
+     *  ユーザー情報変更画面表示
+     *
+     * @return void
+     */
+    public function editUsersForm()
+    {
+        //ユーザー情報取得
+        $auth = Auth::user();
+        return view('user.edit', ['auth' => $auth]);
     }
 }
