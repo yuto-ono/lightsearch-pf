@@ -23,7 +23,7 @@
                             <p class="col-md-6">{{ $auth->email }}</p>
                         </div>
                         <div class="d-fix justify-content-center" style="text-align:center;">
-                            <a href="" class="btn btn-secondary text-white col-md-3 py-2 mx-1 mb-4">編集する</a>
+                            <a href="{{ route('user.edit', Auth::id() ) }}" class="btn btn-secondary text-white col-md-3 py-2 mx-1 mb-4">編集する</a>
                         </div>
                         <div class="mt-1">
                             パスワードを変更したい方は<a href="{{ route('password.request') }}">こちら</a>
