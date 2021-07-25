@@ -11,6 +11,8 @@
 |
 */
 
+use App\Http\Controllers\UsersController;
+
 Route::get('/', function () {
     return view('welcome');
 });
@@ -22,6 +24,8 @@ Route::group(['middleware' => ['auth']], function () {
     Route::get('/users', 'UsersController@showUsersForm')->name('user.mypage');
     //ユーザー情報変更画面表示
     Route::get('users/{id}/edit', 'UsersController@editUsersForm')->name('user.edit');
+    //ユーザー情報変更処理
+    Route::put('users/{id}', 'UsersController@edit')->name('user.update');
 
 });
 
