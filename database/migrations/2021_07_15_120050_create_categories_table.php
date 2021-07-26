@@ -17,6 +17,7 @@ class CreateCategoriesTable extends Migration
             //カラムに追加
             $table->bigIncrements('id');
             $table->string('name');
+            $table->integer('sort_no');
             $table->timestamps();
         });
     }
