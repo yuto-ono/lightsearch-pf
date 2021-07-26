@@ -9,7 +9,7 @@
                     <a class="nav-link active" href="{{ route('user.mypage') }}">マイページ</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link active" href="">レビュー投稿</a>
+                    <a class="nav-link active" href="{{ route('reviews.create') }}">レビュー投稿</a>
                 </li>
                 <li class="navbar-logout">
                     <a class="nav-link active" href="{{ route('logout') }}"
