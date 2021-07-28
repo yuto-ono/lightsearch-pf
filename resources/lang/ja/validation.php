@@ -119,7 +119,12 @@ return [
     'attributes' => [
         'name' => 'ユーザー名',
         'email' => 'メールアドレス',
-        'password' => 'パスワード'
+        'password' => 'パスワード',
+        'title' => 'タイトル',
+        'author_name' => '作者名',
+        'category_id'  => 'カテゴリ',
+        'impressions' => '感想',
+        'image' => 'サムネイル'
     ],
 
 ];
