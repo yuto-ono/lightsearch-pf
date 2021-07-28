@@ -13,36 +13,56 @@
                     <h3 class="text-center my-2"><i class="fas fa-pen"></i> レビュー投稿</h3>
                 </div>
                 <div class="card-body col-md-9 mx-auto">
-                    <form method="POST" action="">
+                    <form method="POST" action="{{ route('reviews.update') }}" enctype="multipart/form-data">
                         @method('POST')
                         @csrf
                         <div class="card-body">
                             <div class="form-group">
                                 <label for="title">ライトノベル名</label>
-                                <input id="title" type="title" class="form-control" name="title" autofocus>
+                                <input id="title" type="title" class="form-control @error('title') is-invalid @enderror" value="{{ old('title') }}" name="title" autofocus>
+                                @error('title')
+                                <span class="invalid-feedback" role="alert">
+                                    <strong>{{ $message }}</strong>
+                                </span>
+                                @enderror
                             </div>
                             <div class="form-group">
                                 <label for="author_name">作者名</label>
-                                <input id="author_name" type="author_name" class="form-control" name="author_name">
+                                <input id="author_name" type="author_name" class="form-control @error('author_name') is-invalid @enderror" value="{{ old('author_name') }}" name="author_name">
+                                @error('author_name')
+                                <span class="invalid-feedback" role="alert">
+                                    <strong>{{ $message }}</strong>
+                                </span>
+                                @enderror
                             </div>
                             <div class="form-group">
-                                <label for="author_name">カテゴリ</label>
-                                <select name="condition" class="custom-select form-control @error('condition') is-invalid @enderror">
-                                @foreach ($conditions as $condition)
-                                    <option value="{{$condition->id}}" {{old('condition') == $condition->id ? 'selected' : ''}}>
+                                <label for="category_id">カテゴリ</label>
+                                <select name="category_id" class="custom-select form-control @error('category_id') is-invalid @enderror">
+                                    @foreach ($conditions as $condition)
+                                    <option value="{{$condition->id}}" {{old('category_id')==$condition->id ? 'selected' : ''}}>
                                         {{$condition->name}}
                                     </option>
-                                @endforeach
-                            </select>
+                                    @endforeach
+                                </select>
                             </div>
                             <div class="form-group">
                                 <label for="impressions">感想</label>
-                                <textarea id="impressions" type="impressions" class="form-control " name="impressions"></textarea>
+                                <textarea id="impressions" type="impressions" class="form-control @error('impressions') is-invalid @enderror" value="{{ old('impressions') }}" name="impressions"></textarea>
+                                @error('impressions')
+                                <span class="invalid-feedback" role="alert">
+                                    <strong>{{ $message }}</strong>
+                                </span>
+                                @enderror
                             </div>
                             <div class="form-group">
                                 <label for="file">サムネイル</label>
                                 <div class="form-group">
-                                    <input type="file" id="file" name='image' class="form-control-file">
+                                    <input type="file" id="file" name='image' class="form-control-file @error('image') is-invalid @enderror">
+                                    @error('image')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                    @enderror
                                 </div>
                             </div>
                         </div>
