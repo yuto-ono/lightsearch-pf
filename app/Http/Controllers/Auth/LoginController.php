@@ -43,6 +43,6 @@ class LoginController extends Controller
      */
     protected function loggedOut()
     {
-        return redirect('/index');
+        return redirect('/');
     }
 }
