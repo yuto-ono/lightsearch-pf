@@ -11,11 +11,8 @@
 |
 */
 
-use App\Http\Controllers\UsersController;
-
-Route::get('/', function () {
-    return view('welcome');
-});
+//レビュー一覧
+Route::get('/', 'ReviewsController@index')->name('index');
 
 Auth::routes();
 
@@ -30,9 +27,5 @@ Route::group(['middleware' => ['auth']], function () {
     Route::get('/reviews/create', 'ReviewsController@createReviewForm')->name('reviews.create');
     //レビュー投稿処理
     Route::post('/reviews', 'ReviewsController@create')->name('reviews.update');
-
-
 });
 
-
-Route::get('/home', 'HomeController@index')->name('home');
