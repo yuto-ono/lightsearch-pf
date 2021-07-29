@@ -9,6 +9,17 @@ use App\Models\Review;
 class ReviewsController extends Controller
 {
     /**
+     * レビュー一覧画面表示
+     *
+     * @return void
+     */
+    public function index()
+    {
+        //レビュー情報取得
+        $reviews = Review::all();
+        return view('reviews.index', compact('reviews'));
+    }
+    /**
      * レビュー投稿画面表示
      *
      * @return void
@@ -38,11 +49,11 @@ class ReviewsController extends Controller
             $data = ['user_id' => \Auth::id(), 'title' => $post['title'], 'author_name' => $post['author_name'], 'category_id' => $post['category_id'], 'impressions' => $post['impressions'],  'image' => $request->file('image')->hashName()];
         } else {
             //取得した値を配列に入れる
-            $data = ['user_id' => \Auth::id(),'title' => $post['title'], 'author_name' => $post['author_name'], 'category_id' => $post['category_id'], 'impressions' => $post['impressions']];
+            $data = ['user_id' => \Auth::id(), 'title' => $post['title'], 'author_name' => $post['author_name'], 'category_id' => $post['category_id'], 'impressions' => $post['impressions']];
         }
         //DBに保存
         Review::insert($data);
         //リダイレクト
-        return redirect('/home');
+        return redirect('/');
     }
 }
