@@ -44,7 +44,7 @@
                             </div>
                             <div class="row">
                                 <p class="col-md-4 text-md-right">カテゴリ</p>
-                                <p class="col-md-6">{{ $review->categories->name }}</p>
+                                <p class="col-md-6">{{ $review->category->name }}</p>
                             </div>
                             <div class="row">
                                 <p class="col-md-4 text-md-right">感想</p>
