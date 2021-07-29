@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('title')
-レビュー投稿画面
+レビュー投稿
 @endsection
 
 @section('content')

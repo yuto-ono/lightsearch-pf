@@ -1,6 +1,6 @@
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
     <div class="container-fluid">
-        <a class="navbar-brand site-logo" href="">LightSearch</a>
+        <a class="navbar-brand site-logo" href="{{ route('index') }}">LightSearch</a>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav ml-auto mr-3">
                 @if (Auth::check())
