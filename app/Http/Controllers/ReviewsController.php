@@ -17,9 +17,7 @@ class ReviewsController extends Controller
     {
         //レビュー情報取得
         $reviews = Review::all();
-        //カテゴリの名前を取得
-        $categories = Category::all();
-        return view('reviews.index', compact('reviews', 'categories'));
+        return view('reviews.index', compact('reviews'));
     }
     /**
      * レビュー投稿画面表示
