@@ -10,3 +10,8 @@
     margin: 10px;
 }
 
+/* レビュー一覧画面のサムネイル トリミング用css */
+.book-image {
+    object-fit: cover;
+}
+

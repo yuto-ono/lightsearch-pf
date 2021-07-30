@@ -15,9 +15,11 @@ class ReviewsController extends Controller
      */
     public function index()
     {
-        //レビュー情報取得
-        $reviews = Review::all();
-        return view('reviews.index', compact('reviews'));
+        //ページネーション実装+n+1問題解消(id)
+        $reviews = Review::with('user')->orderBy('id', 'desc')->paginate(4);
+        //n+1問題解消(category)
+        $categories = Review::with('category')->limit(5)->get();
+        return view('reviews.index', compact('reviews', 'categories'));
     }
     /**
      * レビュー投稿画面表示
