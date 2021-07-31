@@ -58,4 +58,16 @@ class ReviewsController extends Controller
         //リダイレクト
         return redirect('/');
     }
+
+    /**
+     * レビュー詳細画面表示
+     *
+     * @return void
+     */
+    public function showReviewForm()
+    {
+        //レビュー一覧取得
+        $review = Review::with('user')->get();
+        return view('reviews.show', compact('review'));
+    }
 }

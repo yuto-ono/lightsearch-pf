@@ -38,12 +38,12 @@
                         </div>
                         <div class="card-body">
                             <div class="row">
-                                <p class="col-md-4 text-md-right">作者名</p>
-                                <p class="col-md-6">{{ $review->author_name }}</p>
+                                <p class="col-md-4 text-md-right">ライトノベル名</p>
+                                <p class="col-md-6">{{ $review->title }}</p>
                             </div>
                             <div class="row">
-                                <p class="col-md-4 text-md-right">タイトル</p>
-                                <p class="col-md-6">{{ $review->title }}</p>
+                                <p class="col-md-4 text-md-right">作者名</p>
+                                <p class="col-md-6">{{ $review->author_name }}</p>
                             </div>
                             <div class="row">
                                 <p class="col-md-4 text-md-right">カテゴリ</p>
@@ -69,7 +69,7 @@
                                 <!-- ログインした人・自分の記事のみ表示 -->
                                 @if(Auth::check() && $review->user->id == Auth::id())
                                 <div class="row">
-                                    <a class="btn btn-secondary text-white col-md-4 mx-auto looking">詳細を見る</a>
+                                    <a class="btn btn-secondary text-white col-md-4 mx-auto looking" href="{{ route('reviews.show', Auth::id()) }}">詳細を見る</a>
                                 </div>
                                 @endif
                             </form>
