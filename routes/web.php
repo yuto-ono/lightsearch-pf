@@ -27,5 +27,6 @@ Route::group(['middleware' => ['auth']], function () {
     Route::get('/reviews/create', 'ReviewsController@createReviewForm')->name('reviews.create');
     //レビュー投稿処理
     Route::post('/reviews', 'ReviewsController@create')->name('reviews.update');
+    //レビュー詳細画面表示
+    Route::get('/reviews/{id}', 'ReviewsController@showReviewForm')->name('reviews.show');
 });
-
