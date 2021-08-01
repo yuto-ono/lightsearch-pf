@@ -32,9 +32,9 @@
                         </div>
                         <div class="row mb-2">
                             <p class="col-md-4 text-md-right">サムネイル</p>
-                            @if(!empty($review->image))
+                            @if(!empty($user->image))
                             <div class='image-wrapper'>
-                                <img class='book-image' src="{{ asset('storage/images/'.$review->image) }}">
+                                <img class='book-image' src="{{ asset('storage/images/'.$user->image) }}">
                             </div>
                             @else
                             <div class='image-wrapper'>
