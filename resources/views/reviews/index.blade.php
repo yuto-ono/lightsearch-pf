@@ -69,7 +69,7 @@
                                 <!-- ログインした人・自分の記事のみ表示 -->
                                 @if(Auth::check() && $review->user->id == Auth::id())
                                 <div class="row">
-                                    <a class="btn btn-secondary text-white col-md-4 mx-auto looking" href="{{ route('reviews.show', Auth::id()) }}">詳細を見る</a>
+                                    <a class="btn btn-secondary text-white col-md-4 mx-auto looking" href="{{ route('reviews.show', $review ) }}">詳細を見る</a>
                                 </div>
                                 @endif
                             </form>

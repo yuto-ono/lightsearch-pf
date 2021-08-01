@@ -28,6 +28,5 @@ Route::group(['middleware' => ['auth']], function () {
     //レビュー投稿処理
     Route::post('/reviews', 'ReviewsController@create')->name('reviews.update');
     //レビュー詳細画面表示
-    Route::get('/reviews/{id}/show', 'ReviewsController@showReviewForm')->name('reviews.show');
+    Route::get('/reviews/{id}', 'ReviewsController@showReviewForm')->name('reviews.show');
 });
-

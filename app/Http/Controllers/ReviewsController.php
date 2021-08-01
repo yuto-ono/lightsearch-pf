@@ -64,10 +64,9 @@ class ReviewsController extends Controller
      *
      * @return void
      */
-    public function showReviewForm()
+    public function showReviewForm($id)
     {
-        //レビュー一覧取得
-        $review = Review::with('user')->get();
-        return view('reviews.show', compact('review'));
+        $user = Review::find($id);
+        return view('reviews.show', compact('user'));
     }
 }

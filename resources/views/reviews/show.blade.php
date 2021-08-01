@@ -16,19 +16,19 @@
                     <div class="card-body">
                         <div class="row mb-2">
                             <p class="col-md-4 text-md-right">ライトノベル名</p>
-                            <p class="col-md-6">{{ $review->title }}</p>
+                            <p class="col-md-6">{{ $user->title }}</p>
                         </div>
                         <div class="row mb-2">
                             <p class="col-md-4 text-md-right">作者名</p>
-                            <p class="col-md-6">{{ $review->author_name }}</p>
+                            <p class="col-md-6">{{ $user->author_name }}</p>
                         </div>
                         <div class="row mb-2">
                             <p class="col-md-4 text-md-right">カテゴリ</p>
-                            <p class="col-md-6">{{ $review->category->name }}</p>
+                            <p class="col-md-6">{{ $user->category->name }}</p>
                         </div>
                         <div class="row mb-2">
                             <p class="col-md-4 text-md-right">感想</p>
-                            <p class="col-md-6">{{ $review->impressions }}</p>
+                            <p class="col-md-6">{{ $user->impressions }}</p>
                         </div>
                         <div class="row mb-2">
                             <p class="col-md-4 text-md-right">サムネイル</p>
