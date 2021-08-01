@@ -45,5 +45,7 @@ class UsersController extends Controller
         $user->fill($request->all());
         //DBに保存
         $user->save();
+        //リダイレクト
+        return redirect('/');
     }
 }

@@ -15,3 +15,8 @@
     object-fit: cover;
 }
 
+/* レビュー詳細のいいねボタンのカラー用css */
+.button-pink {
+    background-color: #e04d96;
+}
+
