@@ -19,7 +19,7 @@
                             <!-- 自分の記事のみの編集・削除ボタンを表示する -->
                             @if($review->user->id == Auth::id())
                             <div class="d-flex justify-content-around">
-                                <a href="" class="btn btn-secondary rounded-pill ml-auto">
+                                <a href="{{ route('reviews.edit', $review ) }}" class="btn btn-secondary rounded-pill ml-auto">
                                     <i class="far fa-edit mr-1"></i>
                                     編集
                                 </a>
