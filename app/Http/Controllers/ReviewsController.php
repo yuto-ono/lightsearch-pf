@@ -109,4 +109,17 @@ class ReviewsController extends Controller
         //リダイレクト
         return redirect('/');
     }
+
+    /**
+     * レビュー編集処理
+     *
+     * @return void
+     */
+    public function destroy($id)
+    {
+        $reviews = Review::find($id);
+        $reviews->delete();
+        //リダイレクト
+        return redirect('/');
+    }
 }
