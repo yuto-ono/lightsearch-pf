@@ -25,7 +25,7 @@
                                 </a>
                                 <!-- 空白 -->
                                 &nbsp;&nbsp;
-                                <form action="" method="POST">
+                                <form action="{{ route('reviews.delete', $review ) }}" method="POST">
                                     @csrf
                                     @method('DELETE')
                                     <button type="submit" class="btn btn-danger rounded-pill ml-auto">
