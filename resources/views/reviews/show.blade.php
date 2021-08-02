@@ -10,7 +10,7 @@
         <div class="col-md-8">
             <div class="card mb-5">
                 <div class="card-header">
-                    <h3 class="text-center my-2"><i class="fas fa-user mr-2"></i>レビュー詳細</h3>
+                    <h3 class="text-center my-2"><i class="fas fa-pen"></i> レビュー詳細</h3>
                 </div>
                 <div class="card-body col-md-9 mx-auto">
                     <div class="card-body">
@@ -49,7 +49,7 @@
                             <a href="" class="btn btn-success text-white col-md-3 py-2 mx-1 mb-4">
                                 <i class="fas fa-comment"></i> コメント
                             </a>
-                            <a href="" class="btn btn-secondary text-white col-md-3 py-2 mx-1 mb-4">
+                            <a href="{{ route('reviews.edit', $user) }}" class="btn btn-secondary text-white col-md-3 py-2 mx-1 mb-4">
                                 <i class="fas fa-edit"></i> 編集する
                             </a>
                             <a href="" class="btn btn-danger text-white col-md-3 py-2 mx-1 mb-4">
