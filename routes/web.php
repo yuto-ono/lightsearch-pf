@@ -36,6 +36,8 @@ Route::group(['middleware' => ['auth'], 'as' => 'reviews.'], function () {
     Route::put('/reviews/{id}', 'ReviewsController@update')->name('update');
     //レビュー編集画面表示
     Route::get('/reviews/{id}/edit', 'ReviewsController@editReviewForm')->name('edit');
+    //レビュー削除
+    Route::delete('/reviews/{id}', 'ReviewsController@destroy')->name('delete');
 });
 
 

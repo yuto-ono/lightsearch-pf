@@ -49,17 +49,26 @@
                             <a href="" class="btn btn-success text-white col-md-3 py-2 mx-1 mb-4">
                                 <i class="fas fa-comment"></i> コメント
                             </a>
-                            <a href="{{ route('reviews.edit', $user) }}" class="btn btn-secondary text-white col-md-3 py-2 mx-1 mb-4">
+                            <a href="{{ route('reviews.edit', $user ) }}"
+                                class="btn btn-secondary text-white col-md-3 py-2 mx-1 mb-4">
                                 <i class="fas fa-edit"></i> 編集する
                             </a>
-                            <a href="" class="btn btn-danger text-white col-md-3 py-2 mx-1 mb-4">
-                                <i class="fas fa-trash"></i> 削除
-                            </a>
+                            <div>
+                                <form action="{{ route('reviews.delete', $user ) }}" method="POST">
+                                    @csrf
+                                    @method('DELETE')
+                                    <button type="submit" class="btn btn-danger py-2">
+                                        <i class="far fa-trash-alt mr-1"></i>
+                                        削除
+                                    </button>
+                                </form>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
+</div>
 </div>
 @endsection
