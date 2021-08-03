@@ -43,6 +43,11 @@
                             <button type="submit" class="btn btn-block btn-secondary">
                                 ログイン
                             </button>
+                            <button class="btn btn-block btn-primary">
+                                <a href="{{ route('login.guest') }}" class="text-white">
+                                    ゲストログイン
+                                </a>
+                            </button>
                         </div>
 
                         <div class="mt-3">

@@ -14,6 +14,9 @@
 //レビュー一覧
 Route::get('/', 'ReviewsController@index')->name('index');
 
+//ゲストログイン
+Route::get('guest', 'Auth\LoginController@guestLogin')->name('login.guest');
+
 Auth::routes();
 
 Route::group(['middleware' => ['auth'], 'as' => 'user.'], function () {
