@@ -76,10 +76,12 @@ class ReviewsController extends Controller
      *
      * @return void
      */
-    public function editReviewForm($id)
+    public function editReviewForm(Review $review, $id)
     {
         //レビューのユーザー情報取得
         $user = Review::find($id);
+        //認可機能
+        $this->authorize('view', $user);
         //カテゴリ取得
         $conditions = Category::orderBy('sort_no')->get();
         return view('reviews.edit', compact('user', 'conditions'));
