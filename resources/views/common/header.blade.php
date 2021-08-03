@@ -21,6 +21,9 @@
                 @else
                 <!-- 非ログイン -->
                 <li class="nav-item">
+                    <a class="nav-link active" href="{{ route('login.guest') }}">ゲストログイン</a>
+                </li>
+                <li class="nav-item">
                     <a class="nav-link active" href="{{ route('login') }}">ログイン</a>
                 </li>
                 <li class="nav-item">

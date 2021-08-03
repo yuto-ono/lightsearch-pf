@@ -5,6 +5,8 @@ namespace App\Http\Controllers\Auth;
 use App\Http\Controllers\Controller;
 use App\Providers\RouteServiceProvider;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
+use App\Models\User;
+use Illuminate\Support\Facades\Auth;
 
 class LoginController extends Controller
 {
@@ -44,5 +46,18 @@ class LoginController extends Controller
     protected function loggedOut()
     {
         return redirect('/');
+    }
+
+    //ゲストログイン用のIDを定数として定義
+    private const GUEST_USER_ID = 1;
+
+    //ゲストログイン処理
+    public function guestLogin()
+    {
+        //ゲストログインのidがDBに存在すれば、ゲストログインする
+        if (Auth::loginUsingId(self::GUEST_USER_ID)) {
+            //トップページにリダイレクト
+            return redirect('/');
+        }
     }
 }
