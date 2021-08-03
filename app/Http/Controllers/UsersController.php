@@ -25,11 +25,12 @@ class UsersController extends Controller
      *
      * @return void
      */
-    public function editUsersForm()
+    public function editUsersForm(User $user, $id)
     {
-        //ユーザー情報取得
-        $auth = Auth::user();
-        return view('user.edit', ['auth' => $auth]);
+        //認可機能
+        $user = User::find($id);
+        $this->authorize('view', $user);
+        return view('user.edit', ['user' => $user]);
     }
 
     /**
