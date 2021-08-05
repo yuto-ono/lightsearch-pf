@@ -33,7 +33,7 @@
                             </div>
                             <div class="d-fix justify-content-center" style="text-align:center;">
                                 <a href="{{ route('user.edit', Auth::id() ) }}"
-                                    class="btn btn-secondary rounded-pill ml-auto">編集する</a>
+                                    class="btn btn-secondary text-white col-md-3 py-2 mx-1 mb-4">編集する</a>
                             </div>
                         </form>
                         @if (Auth::id() == 1)
