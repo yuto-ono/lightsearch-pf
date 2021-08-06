@@ -40,4 +40,18 @@ class User extends Authenticatable
     //ユーザー退会
     use SoftDeletes;
     protected $dates = ['deleted_at'];
+
+    public function reviews()
+    {
+        $this->hasMany(Review::class);
+    }
+
+    //リレーション先のレビューデータを削除
+    public static function boot()
+    {
+        parent::boot();
+        static::deleted(function ($user) {
+            $user->reviews()->delete();
+        });
+    }
 }

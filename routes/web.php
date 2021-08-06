@@ -28,8 +28,8 @@ Route::group(['middleware' => ['auth'], 'as' => 'user.'], function () {
     Route::put('/users/{id}', 'UsersController@edit')->name('update');
     //ユーザー退会処理
     Route::delete('/users/{id}', 'UsersController@destroy')->name('delete');
-
 });
+
 Route::group(['middleware' => ['auth'], 'as' => 'reviews.'], function () {
     //レビュー投稿画面
     Route::get('/reviews/create', 'ReviewsController@createReviewForm')->name('create');
