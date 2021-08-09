@@ -22,16 +22,27 @@
                             <p class="col-md-4 text-md-right">メールアドレス</p>
                             <p class="col-md-6">{{ $auth->email }}</p>
                         </div>
-                        <div class="d-fix justify-content-center">
-                            <form action="{{ route('user.delete', $auth ) }}" method="POST">
-                                @csrf
-                                @method('DELETE')
-                                <button type="submit" class="btn btn-danger col-md-3 py-2 mx-1 mb-4">
-                                    <i class="far fa-trash-alt mr-1"></i>
-                                    退会
-                                </button>
-                            </form>
-                            <a href="{{ route('user.edit', Auth::id() ) }}" class="btn btn-secondary col-md-3 py-2 mx-1 mb-4">編集する</a>
+                        <div class="container mt-4">
+                            <div class="row justify-content-center">
+                                <div class="btn-group">
+                                    <form action="{{ route('user.delete', $auth ) }}" method="POST">
+                                        @csrf
+                                        @method('DELETE')
+                                        <button class="btn btn-danger">
+                                            <i class="far fa-trash-alt"></i>
+                                            退会
+                                        </button>
+                                    </form>
+                                    <form action="{{ route('user.edit', Auth::id() ) }}" method="GET">
+                                        @csrf
+                                        @method('GET')
+                                        <button type="submit" class="btn btn-secondary mx-3 mb-4">
+                                            <i class="far fa-trash-alt"></i>
+                                            編集する
+                                        </button>
+                                    </form>
+                                </div>
+                            </div>
                         </div>
                         @if (Auth::id() == 1)
                         <p class="text-danger">※ゲストユーザーは、パスワードを編集できません</p>
