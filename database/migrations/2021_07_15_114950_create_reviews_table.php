@@ -18,7 +18,7 @@ class CreateReviewsTable extends Migration
             $table->bigIncrements('id');
             $table->bigInteger('user_id')->unsigned();
             // 指定したカラムに外部キー制約を定義
-            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
+            $table->foreign('user_id')->references('id')->on('users');
             $table->string('title'); //ライトノベル名
             $table->string('author_name'); //作者
             $table->bigInteger('category_id'); //カテゴリ
