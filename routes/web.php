@@ -26,8 +26,10 @@ Route::group(['middleware' => ['auth'], 'as' => 'user.'], function () {
     Route::get('/users/{id}/edit', 'UsersController@editUsersForm')->name('edit');
     //ユーザー情報変更処理
     Route::put('/users/{id}', 'UsersController@edit')->name('update');
-
+    //ユーザー退会処理
+    Route::delete('/users/{id}', 'UsersController@destroy')->name('delete');
 });
+
 Route::group(['middleware' => ['auth'], 'as' => 'reviews.'], function () {
     //レビュー投稿画面
     Route::get('/reviews/create', 'ReviewsController@createReviewForm')->name('create');
@@ -42,8 +44,3 @@ Route::group(['middleware' => ['auth'], 'as' => 'reviews.'], function () {
     //レビュー削除
     Route::delete('/reviews/{id}', 'ReviewsController@destroy')->name('delete');
 });
-
-
-
-
-

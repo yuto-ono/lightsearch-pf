@@ -22,8 +22,16 @@
                             <p class="col-md-4 text-md-right">メールアドレス</p>
                             <p class="col-md-6">{{ $auth->email }}</p>
                         </div>
-                        <div class="d-fix justify-content-center" style="text-align:center;">
-                            <a href="{{ route('user.edit', Auth::id() ) }}" class="btn btn-secondary text-white col-md-3 py-2 mx-1 mb-4">編集する</a>
+                        <div class="d-fix justify-content-center">
+                            <form action="{{ route('user.delete', $auth ) }}" method="POST">
+                                @csrf
+                                @method('DELETE')
+                                <button type="submit" class="btn btn-danger col-md-3 py-2 mx-1 mb-4">
+                                    <i class="far fa-trash-alt mr-1"></i>
+                                    退会
+                                </button>
+                            </form>
+                            <a href="{{ route('user.edit', Auth::id() ) }}" class="btn btn-secondary col-md-3 py-2 mx-1 mb-4">編集する</a>
                         </div>
                         @if (Auth::id() == 1)
                         <p class="text-danger">※ゲストユーザーは、パスワードを編集できません</p>

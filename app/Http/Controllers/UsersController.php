@@ -49,4 +49,20 @@ class UsersController extends Controller
         //リダイレクト
         return redirect('/');
     }
+
+    /**
+     * ユーザー退会処理
+     *
+     * @param [type] $id
+     * @return void
+     */
+    public function destroy($id)
+    {
+        //ユーザー情報取得
+        $user = User::find($id);
+        //ユーザーを論理削除
+        $user->delete();
+        //リダイレクト
+        return redirect('/');
+    }
 }
