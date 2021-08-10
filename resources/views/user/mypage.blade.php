@@ -25,14 +25,6 @@
                         <div class="container mt-4">
                             <div class="row justify-content-center">
                                 <div class="btn-group">
-                                    <form action="{{ route('user.delete', $auth ) }}" method="POST">
-                                        @csrf
-                                        @method('DELETE')
-                                        <button class="btn btn-danger">
-                                            <i class="far fa-trash-alt"></i>
-                                            退会
-                                        </button>
-                                    </form>
                                     <form action="{{ route('user.edit', Auth::id() ) }}" method="GET">
                                         @csrf
                                         @method('GET')
@@ -41,6 +33,18 @@
                                             編集する
                                         </button>
                                     </form>
+                                    @if (Auth::id() == 1)
+                                    <p class="text-danger">※ゲストユーザーは、退会できません</p>
+                                    @else
+                                    <form action="{{ route('user.delete', $auth ) }}" method="POST">
+                                        @csrf
+                                        @method('DELETE')
+                                        <button class="btn btn-danger">
+                                            <i class="far fa-trash-alt"></i>
+                                            退会
+                                        </button>
+                                    </form>
+                                    @endif
                                 </div>
                             </div>
                         </div>
