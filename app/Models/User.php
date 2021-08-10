@@ -36,8 +36,4 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
-
-    //ユーザー退会
-    use SoftDeletes;
-    protected $dates = ['deleted_at'];
 }
