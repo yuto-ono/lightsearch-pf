@@ -20,7 +20,9 @@ class ReviewsController extends Controller
         $reviews = Review::with('user')->orderBy('id', 'asc')->paginate(4);
         //n+1問題解消(category)
         $categories = Review::with('category')->limit(5)->get();
-        return view('reviews.index', compact('reviews', 'categories'));
+        //カテゴリ取得
+        $conditions = Category::orderBy('sort_no')->get();
+        return view('reviews.index', compact('reviews', 'categories', 'conditions'));
     }
     /**
      * レビュー投稿画面表示

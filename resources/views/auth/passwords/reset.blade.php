@@ -40,7 +40,7 @@
                         </div>
 
                         <div class="form-group mb-0">
-                            <button type="submit" class="btn btn-block btn-secondary">
+                            <button type="submit" class="btn btn-block btn-primary">
                                 パスワードを再設定する
                             </button>
                         </div>
@@ -51,4 +51,3 @@
     </div>
 </div>
 @endsection
-
