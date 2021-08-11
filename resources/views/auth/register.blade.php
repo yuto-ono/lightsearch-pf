@@ -72,7 +72,7 @@
                         </div>
 
                         <div class="form-group">
-                            <button type="submit" class="btn btn-block btn-secondary">
+                            <button type="submit" class="btn btn-block btn-primary">
                                 会員登録
                             </button>
                         </div>

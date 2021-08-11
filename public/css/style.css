@@ -25,3 +25,14 @@ textarea {
     width: 450px !important;
     height: 150px !important;
 }
+
+/* 検索欄の空白用 css */
+.category {
+    margin: 10px;
+}
+.freeword {
+    margin: 10px;
+}
+.search {
+    margin-bottom: 20px;
+}

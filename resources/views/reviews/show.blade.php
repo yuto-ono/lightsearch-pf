@@ -50,7 +50,7 @@
                                 <i class="fas fa-comment"></i> コメント
                             </a>
                             <a href="{{ route('reviews.edit', $user ) }}"
-                                class="btn btn-secondary text-white col-md-3 py-2 mx-1 mb-4">
+                                class="btn btn-primary text-white col-md-3 py-2 mx-1 mb-4">
                                 <i class="fas fa-edit"></i> 編集する
                             </a>
                             <div>

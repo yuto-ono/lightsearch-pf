@@ -67,7 +67,7 @@
                             </div>
                         </div>
                         <div class="d-fix justify-content-center" style="text-align:center;">
-                            <button class="btn btn-secondary text-white col-md-3 py-2 mx-1 mb-4">投稿する</button>
+                            <button class="btn btn-primary text-white col-md-3 py-2 mx-1 mb-4">投稿する</button>
                         </div>
                     </form>
                 </div>

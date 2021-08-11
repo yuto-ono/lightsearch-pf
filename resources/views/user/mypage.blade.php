@@ -28,7 +28,7 @@
                                     <form action="{{ route('user.edit', Auth::id() ) }}" method="GET">
                                         @csrf
                                         @method('GET')
-                                        <button type="submit" class="btn btn-secondary mx-3 mb-4">
+                                        <button type="submit" class="btn btn-primary mx-3 mb-4">
                                             <i class="far fa-trash-alt"></i>
                                             編集する
                                         </button>
