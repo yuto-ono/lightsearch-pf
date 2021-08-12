@@ -58,7 +58,7 @@ class ReviewsController extends Controller
         //DBに保存
         Review::insert($data);
         //リダイレクト
-        return redirect('/');
+        return redirect('/')->with('flash_message', 'レビュー投稿が完了しました');
     }
 
     /**
@@ -111,11 +111,11 @@ class ReviewsController extends Controller
         //DBに保存
         DB::table('reviews')->where('id', $request->id)->update($data);
         //リダイレクト
-        return redirect('/');
+        return redirect('/')->with('flash_message', 'レビュー編集が完了しました');
     }
 
     /**
-     * レビュー編集処理
+     * レビュー削除処理
      *
      * @return void
      */
@@ -124,6 +124,6 @@ class ReviewsController extends Controller
         $reviews = Review::find($id);
         $reviews->delete();
         //リダイレクト
-        return redirect('/');
+        return redirect('/')->with('flash_message', 'レビュー削除しました');
     }
 }

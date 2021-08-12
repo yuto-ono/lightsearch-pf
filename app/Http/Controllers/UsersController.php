@@ -47,7 +47,7 @@ class UsersController extends Controller
         //DBに保存
         $user->save();
         //リダイレクト
-        return redirect('/');
+        return redirect('/')->with('flash_message', 'ユーザー情報変更が完了しました');
     }
 
     /**
@@ -63,6 +63,6 @@ class UsersController extends Controller
         //ユーザーを論理削除
         $user->delete();
         //リダイレクト
-        return redirect('/');
+        return redirect('/')->with('flash_message', 'ユーザー退会が完了しました');
     }
 }
