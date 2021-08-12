@@ -45,7 +45,7 @@ class LoginController extends Controller
      */
     protected function loggedOut()
     {
-        return redirect('/');
+        return redirect('/')->with('flash_message', 'ログアウトが完了しました');
     }
 
     //ゲストログイン用のIDを定数として定義
@@ -57,7 +57,7 @@ class LoginController extends Controller
         //ゲストログインのidがDBに存在すれば、ゲストログインする
         if (Auth::loginUsingId(self::GUEST_USER_ID)) {
             //トップページにリダイレクト
-            return redirect('/');
+            return redirect('/')->with('flash_message', 'ゲストログインしました');
         }
     }
 }

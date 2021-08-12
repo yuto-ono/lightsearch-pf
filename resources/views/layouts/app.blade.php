@@ -17,10 +17,28 @@
     <title>
         @yield('title') | {{ config('app.name', 'Laravel') }}</title>
     </title>
+    <!-- js Styles -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script>
+        (function () {
+            'use strict';
+            // フラッシュメッセージのfadeout
+            $(function () {
+                $('.flash_message').fadeOut(3000);
+            });
+        })();
+    </script>
 </head>
 
 <body>
     @include('common.header')
+
+    <!-- フラッシュメッセージ -->
+    @if (session('flash_message'))
+    <div class="flash_message bg-success text-center py-3 my-0">
+        {{ session('flash_message') }}
+    </div>
+    @endif
 
     <div class="d-flex justify-content-center mt-5">
         <div class="container">
