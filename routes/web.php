@@ -17,6 +17,11 @@ Route::get('/', 'ReviewsController@index')->name('index');
 //ゲストログイン
 Route::get('guest', 'Auth\LoginController@guestLogin')->name('login.guest');
 
+//検索フォーム
+Route::get('show', 'ReviewSearchController@show')->name('show');
+//検索表示フォーム
+Route::get('search', 'ReviewSearchController@show')->name('search');
+
 Auth::routes();
 
 Route::group(['middleware' => ['auth'], 'as' => 'user.'], function () {
