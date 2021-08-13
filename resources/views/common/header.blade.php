@@ -11,6 +11,9 @@
                 <li class="nav-item">
                     <a class="nav-link active" href="{{ route('reviews.create') }}">レビュー投稿</a>
                 </li>
+                <li class="nav-item">
+                    <a class="nav-link active" href="{{ route('show') }}">レビュー検索</a>
+                </li>
                 <li class="navbar-logout">
                     <a class="nav-link active" href="{{ route('logout') }}"
                         onclick="event.preventDefault(); document.getElementById('logout-form').submit();">ログアウト</a>
@@ -20,6 +23,9 @@
                 </li>
                 @else
                 <!-- 非ログイン -->
+                <li class="nav-item">
+                    <a class="nav-link active" href="{{ route('show') }}">レビュー検索</a>
+                </li>
                 <li class="nav-item">
                     <a class="nav-link active" href="{{ route('login.guest') }}">ゲストログイン</a>
                 </li>
