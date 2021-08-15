@@ -9,10 +9,10 @@
                     <a class="nav-link active" href="{{ route('user.mypage') }}">マイページ</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link active" href="{{ route('reviews.create') }}">レビュー投稿</a>
+                    <a class="nav-link active" href="{{ route('reviews.create') }}"><i class="fas fa-pen"></i> レビュー投稿</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link active" href="{{ route('show') }}">レビュー検索</a>
+                    <a class="nav-link active" href="{{ route('show') }}"><i class="fas fa-search"></i> レビュー検索</a>
                 </li>
                 <li class="navbar-logout">
                     <a class="nav-link active" href="{{ route('logout') }}"
@@ -24,7 +24,7 @@
                 @else
                 <!-- 非ログイン -->
                 <li class="nav-item">
-                    <a class="nav-link active" href="{{ route('show') }}">レビュー検索</a>
+                    <a class="nav-link active" href="{{ route('show') }}"><i class="fas fa-search"></i> レビュー検索</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link active" href="{{ route('login.guest') }}">ゲストログイン</a>
