@@ -36,3 +36,8 @@ textarea {
 .search {
     margin-bottom: 20px;
 }
+
+/* 検索用のテーブルカラー */
+thead {
+    background-color: #3490dc;
+}
