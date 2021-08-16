@@ -41,3 +41,8 @@ textarea {
 thead {
     background-color: #3490dc;
 }
+
+/* セル幅を自動調整 */
+table {
+    width: auto !important;
+}
