@@ -61,7 +61,6 @@
                     </table>
                 </div>
                 <div class="d-flex justify-content-center">
-                    {{-- appendsでカテゴリを選択したまま遷移 --}}
                     {{ $products->appends(request()->input())->links() }}
                 </div>
                 @endif
