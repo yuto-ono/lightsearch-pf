@@ -46,3 +46,12 @@ thead {
 table {
     width: auto !important;
 }
+
+/* レビュー詳細画面のボタン調整用 css */
+.delete-btn {
+    margin-left: 220px;
+    margin-top: -115px;
+}
+.edit-btn {
+    margin-left: 100px !important;
+}

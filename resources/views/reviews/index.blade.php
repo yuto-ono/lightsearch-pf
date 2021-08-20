@@ -43,18 +43,6 @@
                                 <p class="col-md-6">{{ $review->title }}</p>
                             </div>
                             <div class="row">
-                                <p class="col-md-4 text-md-right">作者名</p>
-                                <p class="col-md-6">{{ $review->author_name }}</p>
-                            </div>
-                            <div class="row">
-                                <p class="col-md-4 text-md-right">カテゴリ</p>
-                                <p class="col-md-6">{{ $review->category->name }}</p>
-                            </div>
-                            <div class="row">
-                                <p class="col-md-4 text-md-right">感想</p>
-                                <p class="col-md-6">{{ $review->impressions }}</p>
-                            </div>
-                            <div class="row">
                                 <p class="col-md-4 text-md-right">サムネイル</p>
                                 @if(!empty($review->image))
                                 <div class='image-wrapper'>
