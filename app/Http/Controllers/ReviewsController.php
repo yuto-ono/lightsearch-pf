@@ -5,7 +5,6 @@ namespace App\Http\Controllers;
 use App\Http\Requests\ReviewsRequest;
 use App\Models\Category;
 use App\Models\Review;
-use Illuminate\Support\Facades\DB;
 
 class ReviewsController extends Controller
 {
@@ -41,22 +40,19 @@ class ReviewsController extends Controller
      *
      * @return void
      */
-    public function create(ReviewsRequest $request)
+    public function create(ReviewsRequest $request, Review $review)
     {
-        //値を取得
-        $post = $request->all();
-        //条件分岐(ファイルが存在するかいなか)
-        if ($request->hasFile('image')) {
-            //ファイルをアップロードする
-            $request->file('image')->store('/public/images');
-            //取得した値とアップロードした画像パスを配列に入れる
-            $data = ['user_id' => \Auth::id(), 'title' => $post['title'], 'author_name' => $post['author_name'], 'category_id' => $post['category_id'], 'impressions' => $post['impressions'],  'image' => $request->file('image')->hashName()];
-        } else {
-            //取得した値を配列に入れる
-            $data = ['user_id' => \Auth::id(), 'title' => $post['title'], 'author_name' => $post['author_name'], 'category_id' => $post['category_id'], 'impressions' => $post['impressions']];
+        //画像以外を保存する
+        $review->fill($request->all());
+        //条件分岐で画像を保存する
+        if ($request->file('image')) {
+            $filename = $request->file('image')->store('public/images');
+            $review->image = str_replace('public/images/', '', $filename);
         }
-        //DBに保存
-        Review::insert($data);
+        //ユーザーIDを取得
+        $review->user_id = $request->user()->id;
+        //DBに保存する
+        $review->save();
         //リダイレクト
         return redirect('/')->with('flash_message', 'レビュー投稿が完了しました');
     }
@@ -94,22 +90,21 @@ class ReviewsController extends Controller
      *
      * @return void
      */
-    public function update(ReviewsRequest $request)
+    public function update(ReviewsRequest $request, $id)
     {
-        //値を取得
-        $post = $request->all();
-        //条件分岐(ファイルが存在するかいなか)
-        if ($request->hasFile('image')) {
-            //ファイルをアップロードする
-            $request->file('image')->store('/public/images');
-            //取得した値とアップロードした画像パスを配列に入れる
-            $data = ['user_id' => \Auth::id(), 'title' => $post['title'], 'author_name' => $post['author_name'], 'category_id' => $post['category_id'], 'impressions' => $post['impressions'],  'image' => $request->file('image')->hashName()];
-        } else {
-            //取得した値を配列に入れる
-            $data = ['user_id' => \Auth::id(), 'title' => $post['title'], 'author_name' => $post['author_name'], 'category_id' => $post['category_id'], 'impressions' => $post['impressions']];
+        //レビューのユーザー情報取得
+        $review_edit = Review::find($id);
+        //画像以外を更新する
+        $review_edit->fill($request->all());
+        //条件分岐で画像を保存する
+        if ($request->file('image')) {
+            $filename = $request->file('image')->store('public/images');
+            $review_edit->image = str_replace('public/images/', '', $filename);
         }
-        //DBに保存
-        DB::table('reviews')->where('id', $request->id)->update($data);
+        //ユーザーIDを取得
+        $review_edit->user_id = $request->user()->id;
+        //DBに保存する
+        $review_edit->save();
         //リダイレクト
         return redirect('/')->with('flash_message', 'レビュー編集が完了しました');
     }

@@ -9,7 +9,7 @@ class Review extends Model
 {
     //記事削除
     use SoftDeletes;
-    protected $fillable = ['title', 'author_name', 'name', 'image', 'category_id'];
+    protected $fillable = ['title', 'author_name', 'name', 'image', 'category_id', 'impressions'];
 
     public function user()
     {
