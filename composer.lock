@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "1a618acc23c9750ed07c0d3fb0ba74cf",
+    "content-hash": "d3711d89783c99f1202aa3fd48bd22a3",
     "packages": [
         {
             "name": "aws/aws-sdk-php",
@@ -1413,26 +1413,26 @@
         },
         {
             "name": "league/flysystem-aws-s3-v3",
-            "version": "1.0.0",
+            "version": "1.0.25",
             "source": {
                 "type": "git",
                 "url": "https://github.com/thephpleague/flysystem-aws-s3-v3.git",
-                "reference": "d08659da9e1fef4c628783556d074f711555af4b"
+                "reference": "d409b97a50bf85fbde30cbc9fc10237475e696ea"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/thephpleague/flysystem-aws-s3-v3/zipball/d08659da9e1fef4c628783556d074f711555af4b",
-                "reference": "d08659da9e1fef4c628783556d074f711555af4b",
+                "url": "https://api.github.com/repos/thephpleague/flysystem-aws-s3-v3/zipball/d409b97a50bf85fbde30cbc9fc10237475e696ea",
+                "reference": "d409b97a50bf85fbde30cbc9fc10237475e696ea",
                 "shasum": ""
             },
             "require": {
-                "aws/aws-sdk-php": "3.*@dev",
-                "league/flysystem": "~1.0",
-                "php": ">=5.4.0"
+                "aws/aws-sdk-php": "^3.0.0",
+                "league/flysystem": "^1.0.40",
+                "php": ">=5.5.0"
             },
             "require-dev": {
                 "henrikbjorn/phpspec-code-coverage": "~1.0.1",
-                "phpspec/phpspec": "~2.0.0"
+                "phpspec/phpspec": "^2.0.0"
             },
             "type": "library",
             "extra": {
@@ -1455,12 +1455,12 @@
                     "email": "info@frenky.net"
                 }
             ],
-            "description": "Flysystem adapter for AWS S3 sdk v3",
+            "description": "Flysystem adapter for the AWS S3 SDK v3.x",
             "support": {
                 "issues": "https://github.com/thephpleague/flysystem-aws-s3-v3/issues",
-                "source": "https://github.com/thephpleague/flysystem-aws-s3-v3/tree/1.0.0"
+                "source": "https://github.com/thephpleague/flysystem-aws-s3-v3/tree/1.0.25"
             },
-            "time": "2015-01-21T22:19:39+00:00"
+            "time": "2020-06-02T18:41:58+00:00"
         },
         {
             "name": "league/mime-type-detection",

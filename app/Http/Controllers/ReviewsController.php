@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use App\Http\Requests\ReviewsRequest;
 use App\Models\Category;
 use App\Models\Review;
+use Illuminate\Support\Facades\Storage;
+
 
 class ReviewsController extends Controller
 {
@@ -46,8 +48,12 @@ class ReviewsController extends Controller
         $review->fill($request->all());
         //条件分岐で画像を保存する
         if ($request->file('image')) {
-            $filename = $request->file('image')->store('public/images');
-            $review->image = str_replace('public/images/', '', $filename);
+            //画像パスをリクエストから取得
+            $image = $request->file('image');
+            //ディスクをS3に指定して、保存先をpublic/imagesのmyprefixに指定
+            $path = Storage::disk('s3')->put('myprefix', $image, 'public');
+            //ｓ3からアップロードした画像パスを取得
+            $review->image = Storage::disk('s3')->Storage::url($path);
         }
         //ユーザーIDを取得
         $review->user_id = $request->user()->id;
@@ -98,8 +104,12 @@ class ReviewsController extends Controller
         $review_edit->fill($request->all());
         //条件分岐で画像を保存する
         if ($request->file('image')) {
-            $filename = $request->file('image')->store('public/images');
-            $review_edit->image = str_replace('public/images/', '', $filename);
+            //画像パスをリクエストから取得
+            $image = $request->file('image');
+            //ディスクをS3に指定して、保存先をpublicのmyprefixに指定
+            $path = Storage::disk('s3')->put('myprefix', $image, 'public');
+            //ｓ3からアップロードした画像パスを取得
+            $review_edit->image = Storage::disk('s3')->Storage::url($path);
         }
         //ユーザーIDを取得
         $review_edit->user_id = $request->user()->id;

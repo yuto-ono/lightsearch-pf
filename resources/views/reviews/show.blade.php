@@ -34,7 +34,7 @@
                             <p class="col-md-4 text-md-right">サムネイル</p>
                             @if(!empty($user->image))
                             <div class='image-wrapper'>
-                                <img class='book-image' src="{{ asset('storage/images/'.$user->image) }}">
+                                <img class='book-image' src="{{ $review->image }}">
                             </div>
                             @else
                             <div class='image-wrapper'>
